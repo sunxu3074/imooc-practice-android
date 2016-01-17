@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="xyz.isunxu.imooc_practice_android.MainActivity"
+    >
+
+    <Button
+        android:id="@+id/open_viewpager"
+        android:layout_above="@+id/open_fragment"
+        android:layout_centerInParent="true"
+        android:text="用ViewPager实现Tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="open_viewpager"
+        />
+
+    <Button
+        android:id="@+id/open_fragment"
+        android:layout_centerInParent="true"
+        android:text="用Fragment实现Tab"
+        android:layout_width="wrap_content"
+        android:onClick="open_fragment"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/open_fragmentPagerdapter"
+        android:layout_centerInParent="true"
+        android:text="用FragmentPagerAdapter+ViewPaher实现Tab"
+        android:layout_width="wrap_content"
+        android:onClick="open_fragmentPagerdapter"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/open_viewpagerIndicator"
+        android:onClick="open_viewpagerIndicator"
+        android:layout_centerInParent="true"
+        android:text="用ViewPagerIndictor+ViewPager实现Tab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
