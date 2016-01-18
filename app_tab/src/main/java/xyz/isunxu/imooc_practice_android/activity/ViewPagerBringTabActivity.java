@@ -1,5 +1,7 @@
 package xyz.isunxu.imooc_practice_android.activity;
 
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -57,24 +59,11 @@ public class ViewPagerBringTabActivity extends AppCompatActivity implements View
 
             @Override public void onPageSelected(int position) {
                 Log.d("sunxu_log","position--->"+position);
-                resetImageButton();
+                resetBackground();
 
                 //position = currentItem
                 //int currentItem = mViewPager.getCurrentItem();
-                switch (position) {
-                    case 0:
-                        mImageButton_weixin.setImageResource(R.drawable.tab_weixin_pressed);
-                        break;
-                    case 1:
-                        mImageButton_friend.setImageResource(R.drawable.tab_find_frd_pressed);
-                        break;
-                    case 2:
-                        mImageButton_address.setImageResource(R.drawable.tab_address_pressed);
-                        break;
-                    case 3:
-                        mImageButton_settings.setImageResource(R.drawable.tab_settings_pressed);
-                        break;
-                }
+                setSelect(position);
             }
 
 
@@ -138,29 +127,44 @@ public class ViewPagerBringTabActivity extends AppCompatActivity implements View
 
     @Override public void onClick(View v) {
 
-        resetImageButton();
+        resetBackground();
 
         int id = v.getId();
         switch (id) {
             case R.id.ll_weixin:
-                mViewPager.setCurrentItem(0);
-                mImageButton_weixin.setImageResource(R.drawable.tab_weixin_pressed);
+
+                setSelect(0);
                 break;
 
             case R.id.ll_friend:
-                mViewPager.setCurrentItem(1);
-                mImageButton_friend.setImageResource(R.drawable.tab_find_frd_pressed);
+                setSelect(1);
                 break;
 
             case R.id.ll_address:
-                mViewPager.setCurrentItem(2);
-                mImageButton_address.setImageResource(R.drawable.tab_address_pressed);
+                setSelect(2);
                 break;
             case R.id.ll_settings:
-                mViewPager.setCurrentItem(3);
-                mImageButton_settings.setImageResource(R.drawable.tab_settings_pressed);
+                setSelect(3);
                 break;
         }
+    }
+
+
+    private void resetBackground() {
+
+        resetImageButton();
+
+        resetLinearLayout();
+    }
+
+
+    private void resetLinearLayout() {
+
+        mLinearLayout_weixin.setBackground(new ColorDrawable(Color.TRANSPARENT));
+        mLinearLayout_address.setBackground(new ColorDrawable(Color.TRANSPARENT));
+        mLinearLayout_friend.setBackground(new ColorDrawable(Color.TRANSPARENT));
+        mLinearLayout_settings.setBackground(new ColorDrawable(Color.TRANSPARENT));
+
     }
 
 
@@ -170,5 +174,33 @@ public class ViewPagerBringTabActivity extends AppCompatActivity implements View
         mImageButton_friend.setImageResource(R.drawable.tab_find_frd_normal);
         mImageButton_address.setImageResource(R.drawable.tab_address_normal);
         mImageButton_settings.setImageResource(R.drawable.tab_settings_normal);
+    }
+
+
+    public void setSelect(int postion) {
+        switch (postion) {
+            case 0:
+                mViewPager.setCurrentItem(0);
+                mLinearLayout_weixin.setBackgroundResource(R.drawable.tab_bg2);
+                mImageButton_weixin.setImageResource(R.drawable.tab_weixin_pressed);
+                break;
+
+            case 1:
+                mViewPager.setCurrentItem(1);
+                mLinearLayout_friend.setBackgroundResource(R.drawable.tab_bg2);
+                mImageButton_friend.setImageResource(R.drawable.tab_find_frd_pressed);
+                break;
+            case 2:
+                mViewPager.setCurrentItem(2);
+                mLinearLayout_address.setBackgroundResource(R.drawable.tab_bg2);
+                mImageButton_address.setImageResource(R.drawable.tab_address_pressed);
+                break;
+            case 3:
+                mViewPager.setCurrentItem(3);
+                mLinearLayout_settings.setBackgroundResource(R.drawable.tab_bg2);
+                mImageButton_settings.setImageResource(R.drawable.tab_settings_pressed);
+                break;
+        }
+
     }
 }

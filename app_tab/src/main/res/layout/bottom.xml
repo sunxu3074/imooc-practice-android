@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/bottom_bar">
 
     <LinearLayout
         android:id="@+id/ll_weixin"
@@ -11,7 +12,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/bottom_bar">
+        android:background="@drawable/tab_bg2">
 
         <ImageButton
             android:clickable="false"
@@ -37,7 +38,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/bottom_bar">
+       >
 
         <ImageButton
             android:id="@+id/ib_friend"
@@ -62,7 +63,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/bottom_bar">
+       >
 
         <ImageButton
             android:clickable="false"
@@ -87,7 +88,7 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/bottom_bar">
+       >
 
         <ImageButton
             android:clickable="false"
