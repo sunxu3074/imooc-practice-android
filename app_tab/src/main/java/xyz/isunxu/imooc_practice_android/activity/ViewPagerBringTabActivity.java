@@ -1,4 +1,4 @@
-package xyz.isunxu.imooc_practice_android;
+package xyz.isunxu.imooc_practice_android.activity;
 
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -8,11 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
+import xyz.isunxu.imooc_practice_android.R;
 
 public class ViewPagerBringTabActivity extends AppCompatActivity implements View.OnClickListener {
 
