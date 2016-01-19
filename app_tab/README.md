@@ -37,3 +37,25 @@
   
  - 和使用ViewPager实现Tab页面类似,不同的是数据源不一样.一个是List\<View\>,一个是List\<FragmentPagerAdapter\>.
  
+#### 用TabLayout实现tab笔记
+  
+ 
+   ```java
+   <android.support.design.widget.TabLayout
+        app:tabGravity="fill"                   // fill or center
+        app:tabIndicatorColor="#18a342"         // 指示器颜色
+        app:tabIndicatorHeight="3dp"            // 指示器的高度
+        app:tabMode="fixed"                     // fixed or scrollable 
+        app:tabSelectedTextColor="#18a342"      // 选中文本颜色
+        app:tabTextColor="#ffffffff"            // 默认文本颜色
+        app:tabBackground="@drawable/bottom_bar" // background
+        />
+   ```
+   
+ 大致流程
+   
+  - initViews();
+  - initDatas(); // 先初始化ViewPager里面的数据(List\<FragmentPagerAdapter\>),然后tabLayout.setupWithViewPager(mViewPager);
+   
+  tabLayout.getTabAt(position).select(); //指定position位置为点击状态
+ 
