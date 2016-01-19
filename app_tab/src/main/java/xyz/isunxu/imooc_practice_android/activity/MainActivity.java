@@ -22,4 +22,9 @@ public class MainActivity extends AppCompatActivity {
     public void open_fragment(View view) {
         startActivity(new Intent(getApplicationContext(), FragmentBringTabActivity.class));
     }
+
+
+    public void open_fragmentPagerdapter(View view) {
+        startActivity(new Intent(getApplicationContext(), FragmentPagerAdapterAvtivity.class));
+    }
 }
