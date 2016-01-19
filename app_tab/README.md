@@ -35,5 +35,5 @@
   
 #### 用FragmentPagerAdapter+ViewPager实现tab笔记
   
- - 和使用ViewPager实现Tab页面类似,不同的是数据源不一样.一个是List<View>,一个是List<FragmentPagerAdapter>.
+ - 和使用ViewPager实现Tab页面类似,不同的是数据源不一样.一个是List\<View\>,一个是List\<FragmentPagerAdapter\>.
  
