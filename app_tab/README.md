@@ -2,7 +2,8 @@
 
 - ImageButton 设置src,background.当点击改变背景时用imageButton.setImageResoure(R.drawable.xxx=);才会生效.
 
-  setBackgroundResource is for setting the background of an ImageView;setImageResource is for setting the src image of the ImageView.
+ > setBackgroundResource is for setting the background of an ImageView;setImageResource is for setting the src image of the ImageView.
+ 
 - 父布局会将点击事件传给ImageButton,而ImageButton并没有处理点击事件.
 
   解决方案1 为ImageButton添加监听器处理点击事件(笨)
@@ -57,5 +58,5 @@
   - initViews();
   - initDatas(); // 先初始化ViewPager里面的数据(List\<FragmentPagerAdapter\>),然后tabLayout.setupWithViewPager(mViewPager);
    
-  tabLayout.getTabAt(position).select(); //指定position位置为点击状态
+> tabLayout.getTabAt(position).select(); //指定position位置为点击状态
  
