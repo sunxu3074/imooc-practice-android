@@ -31,3 +31,9 @@
   initView();
   
   initListeners(); //这里只存在点击底部四个tab区域,然后让fragment跟着动就行.FragmentTransaction.hide();FragmentTransaction.sh   ow();FragmentTransaction.commit();
+  
+  
+#### 用FragmentPagerAdapter+ViewPager实现tab笔记
+  
+ - 和使用ViewPager实现Tab页面类似,不同的是数据源不一样.一个是List<View>,一个是List<FragmentPagerAdapter>.
+ 
