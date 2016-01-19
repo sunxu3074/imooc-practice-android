@@ -27,4 +27,9 @@ public class MainActivity extends AppCompatActivity {
     public void open_fragmentPagerdapter(View view) {
         startActivity(new Intent(getApplicationContext(), FragmentPagerAdapterAvtivity.class));
     }
+
+
+    public void open_tablayout(View view) {
+        startActivity(new Intent(getApplicationContext(), TabLayoutBringTabActivity.class));
+    }
 }

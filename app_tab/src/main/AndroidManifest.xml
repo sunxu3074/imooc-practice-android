@@ -17,7 +17,8 @@
         </activity>
         <activity android:name=".activity.ViewPagerBringTabActivity"/>
         <activity android:name=".activity.FragmentBringTabActivity"/>
-        <activity android:name=".activity.FragmentPagerAdapterAvtivity"></activity>
+        <activity android:name=".activity.FragmentPagerAdapterAvtivity"/>
+        <activity android:name=".activity.TabLayoutBringTabActivity"></activity>
     </application>
 
 </manifest>

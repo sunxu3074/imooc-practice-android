@@ -42,12 +42,12 @@
 
     <Button
         android:textAllCaps="false"
-        android:id="@+id/open_viewpagerIndicator"
+        android:id="@+id/open_tablayout"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/open_fragmentPageradapter"
-        android:onClick="open_viewpagerIndicator"
+        android:onClick="open_tablayout"
 
-        android:text="用ViewPagerIndictor+ViewPager实现Tab"
+        android:text="用TabLayuot实现Tab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

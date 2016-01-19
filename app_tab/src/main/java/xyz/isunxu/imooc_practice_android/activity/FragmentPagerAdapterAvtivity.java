@@ -135,7 +135,6 @@ public class FragmentPagerAdapterAvtivity extends AppCompatActivity implements V
             case R.id.ll_weixin:
                 setSelect(0);
                 break;
-
             case R.id.ll_friend:
                 setSelect(1);
                 break;
