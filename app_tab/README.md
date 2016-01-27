@@ -23,7 +23,7 @@
  initListeners(); // 为底部每个tab添加监听器,为viewpager添加监听器.(点击tab,viewPager动,点viewpager,tab跟着动)
 
 
-#### 用Fragment实现tab笔记
+#### 用Fragment实现tab笔记 
 
 - Button上写入英文字母会显示大写 在xml中添加android:textAllCaps="false"
 - tab之间的fragment会存在点击穿透问题.让每个fragment都继承onTouchListener,重写onTouch();return true即可.
