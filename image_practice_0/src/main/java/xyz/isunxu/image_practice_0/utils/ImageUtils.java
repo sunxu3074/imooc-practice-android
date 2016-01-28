@@ -2,6 +2,7 @@ package xyz.isunxu.image_practice_0.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
@@ -201,6 +202,171 @@ public class ImageUtils {
 
         canvas.drawBitmap(bm, 0, 0, paint);
 
+        return bitmap;
+    }
+
+
+    public static Bitmap backsheetImage(Bitmap bm) {
+
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        int color ;
+        int r,g,b,a;
+
+        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+
+        int[] oldPx = new int[width * height];
+        int[] newPx = new int[width * height];
+
+        bm.getPixels(oldPx, 0, width, 0, 0, width, height);
+
+        for (int i=0;i<oldPx.length;i++) {
+            color = oldPx[i];
+            r = Color.red(color);
+            g = Color.green(color);
+            b = Color.blue(color);
+            a = Color.alpha(color);
+
+            r= 255- r;
+            g= 255- g;
+            b= 255- b;
+
+            if (r > 255) {
+                r = 255;
+            }
+            else if (r < 0) {
+                r = 0;
+            }
+
+            if (g > 255) {
+                g = 255;
+            }
+            else if (g< 0) {
+                g = 0;
+            }
+
+            if (b > 255) {
+                b = 255;
+            }
+            else if (b < 0) {
+                b = 0;
+            }
+
+            newPx[i] = Color.argb(a, r, g, b);
+        }
+
+        bitmap.setPixels(newPx, 0, width, 0, 0, width, height);
+        return bitmap;
+    }
+
+ public static Bitmap olderImage(Bitmap bm) {
+
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        int color ;
+        int r,g,b,a;
+
+        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+
+        int[] oldPx = new int[width * height];
+        int[] newPx = new int[width * height];
+
+        bm.getPixels(oldPx, 0, width, 0, 0, width, height);
+
+        for (int i=0;i<oldPx.length;i++) {
+            color = oldPx[i];
+            r = Color.red(color);
+            g = Color.green(color);
+            b = Color.blue(color);
+            a = Color.alpha(color);
+
+            r= (int)(0.393*r+0.769*g+0.189*b);
+            g= (int)(0.349*r+0.686*g+0.168*b);
+            b= (int)(0.272*r+0.534*g+0.131*b);
+
+            if (r > 255) {
+                r = 255;
+            }
+            else if (r < 0) {
+                r = 0;
+            }
+
+            if (g > 255) {
+                g = 255;
+            }
+            else if (g< 0) {
+                g = 0;
+            }
+
+            if (b > 255) {
+                b = 255;
+            }
+            else if (b < 0) {
+                b = 0;
+            }
+
+            newPx[i] = Color.argb(a, r, g, b);
+        }
+
+        bitmap.setPixels(newPx, 0, width, 0, 0, width, height);
+        return bitmap;
+    }
+
+ public static Bitmap reliefImage(Bitmap bm) {
+
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+        int color ;
+        int r,g,b,a;
+
+        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+
+        int[] oldPx = new int[width * height];
+        int[] newPx = new int[width * height];
+
+        bm.getPixels(oldPx, 0, width, 0, 0, width, height);
+
+        for (int i=1;i<oldPx.length;i++) {
+            color = oldPx[i-1];
+            r = Color.red(color);
+            g = Color.green(color);
+            b = Color.blue(color);
+            a = Color.alpha(color);
+
+            int nextColor = oldPx[i];
+            int r1 = Color.red(nextColor);
+            int g1 = Color.green(nextColor);
+            int b1 = Color.blue(nextColor);
+
+            r= r1-r+127;
+            g= g1-g+127;
+            b= b1-b+127;
+
+            if (r > 255) {
+                r = 255;
+            }
+            else if (r < 0) {
+                r = 0;
+            }
+
+            if (g > 255) {
+                g = 255;
+            }
+            else if (g< 0) {
+                g = 0;
+            }
+
+            if (b > 255) {
+                b = 255;
+            }
+            else if (b < 0) {
+                b = 0;
+            }
+
+            newPx[i] = Color.argb(a, r, g, b);
+        }
+
+        bitmap.setPixels(newPx, 0, width, 0, 0, width, height);
         return bitmap;
     }
 

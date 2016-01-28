@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTextView;
 
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -28,15 +29,19 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onImageMatrix(View view) {
-        startActivity(new Intent(getApplicationContext(),SecondActivity.class));
+        startActivity(new Intent(getApplicationContext(), SecondActivity.class));
     }
 
+
     public void onColorMatrix(View view) {
-        startActivity(new Intent(getApplicationContext(),ThirdActivity.class));
+        startActivity(new Intent(getApplicationContext(), ThirdActivity.class));
     }
 
 
     public void onShow(View view) {
-        startActivity(new Intent(getApplicationContext(),FourActivity.class));
+        startActivity(new Intent(getApplicationContext(), FourActivity.class));
+    }
+    public void onPixels(View view) {
+        startActivity(new Intent(getApplicationContext(), FiveActivity.class));
     }
 }
