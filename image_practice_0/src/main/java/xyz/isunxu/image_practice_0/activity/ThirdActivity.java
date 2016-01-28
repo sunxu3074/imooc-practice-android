@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
-import android.widget.GridView;
 import android.widget.ImageView;
 import xyz.isunxu.image_practice_0.R;
 import xyz.isunxu.image_practice_0.utils.ImageUtils;

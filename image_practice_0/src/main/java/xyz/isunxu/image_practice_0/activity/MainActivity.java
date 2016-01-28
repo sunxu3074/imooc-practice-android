@@ -34,4 +34,9 @@ public class MainActivity extends AppCompatActivity {
     public void onColorMatrix(View view) {
         startActivity(new Intent(getApplicationContext(),ThirdActivity.class));
     }
+
+
+    public void onShow(View view) {
+        startActivity(new Intent(getApplicationContext(),FourActivity.class));
+    }
 }

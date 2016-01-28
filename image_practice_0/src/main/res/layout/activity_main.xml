@@ -32,6 +32,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btnPixelsEffect"
-        android:text="PixelsEffect" />
+        android:onClick="onShow"
+        android:text="矩阵生成主流效果图" />
 </LinearLayout>
