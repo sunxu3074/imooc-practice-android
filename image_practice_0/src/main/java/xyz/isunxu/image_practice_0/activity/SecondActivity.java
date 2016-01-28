@@ -2,10 +2,8 @@ package xyz.isunxu.image_practice_0.activity;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.ColorMatrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import xyz.isunxu.image_practice_0.R;

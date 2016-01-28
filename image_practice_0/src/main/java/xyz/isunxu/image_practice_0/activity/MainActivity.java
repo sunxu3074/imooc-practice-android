@@ -27,7 +27,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void btnPrimaryColor(View view) {
+    public void onImageMatrix(View view) {
         startActivity(new Intent(getApplicationContext(),SecondActivity.class));
+    }
+
+    public void onColorMatrix(View view) {
+        startActivity(new Intent(getApplicationContext(),ThirdActivity.class));
     }
 }

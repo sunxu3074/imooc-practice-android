@@ -22,13 +22,13 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btnPrimaryColor"
-        android:text="PrimaryColor" />
+        android:onClick="onColorMatrix"
+        android:text="矩阵" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btnColorMatrix"
-        android:text="ColorMatrix" />
+        android:onClick="onImageMatrix"
+        android:text="色调饱和度灰度" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

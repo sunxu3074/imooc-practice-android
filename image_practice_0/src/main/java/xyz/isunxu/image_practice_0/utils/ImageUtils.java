@@ -15,7 +15,7 @@ public class ImageUtils {
      * @param tone 色调
      * @param saturation 饱和度
      * @param lum 亮度
-     * @return 生成新的bitmap
+     * @return new bitmap
      */
     public static Bitmap handleImageMatrix(Bitmap bm,float tone,float saturation,float lum) {
         Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
@@ -43,6 +43,27 @@ public class ImageUtils {
 
         paint.setColorFilter(new ColorMatrixColorFilter(imageMatrix));
         canvas.drawBitmap(bm,0,0,paint);
+        return bitmap;
+    }
+
+
+    /**
+     *
+     * @param bm 原图的bitmap
+     * @param matrixs  Assign the array of floats into this matrix, copying all of its values.
+     * @return new bitmap
+     */
+    public static Bitmap handleColorMatrix(Bitmap bm, float[] matrixs) {
+        Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        Paint paint = new Paint();
+
+        ColorMatrix colorMatrix = new ColorMatrix();
+        colorMatrix.set(matrixs);
+        paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+
+        canvas.drawBitmap(bm, 0, 0, paint);
+
         return bitmap;
     }
 }

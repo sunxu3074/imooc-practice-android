@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="8">
+
+    <ImageView
+        android:id="@+id/activity_third_imageview"
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:src="@drawable/war3"/>
+
+    <GridLayout
+        android:id="@+id/activity_third_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:rowCount="4"
+        android:columnCount="5"></GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/activity_third_change"
+            android:onClick="onChange"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="change"
+            android:layout_height="match_parent"/>
+
+        <Button
+            android:text="reset"
+            android:id="@+id/activity_third_reset"
+            android:onClick="onReset"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+</LinearLayout>
