@@ -11,7 +11,7 @@ import xyz.isunxu.image_practice_0.utils.ImageUtils;
 /**
  * Created by sunxu on 16/1/28.
  */
-public class FourActivity extends Activity {
+public class FourthActivity extends Activity {
 
     private ImageView yuantu,huise,fanzhuan,huaijiu,quse,gaobaohe;
 
@@ -28,7 +28,7 @@ public class FourActivity extends Activity {
 
 
     private void initData() {
-        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.war3);
+        mBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.miaowa);
         yuantu.setImageBitmap(mBitmap);
         huise.setImageBitmap(ImageUtils.generateGrayImage(mBitmap));
         fanzhuan.setImageBitmap(ImageUtils.revertImage(mBitmap));

@@ -20,8 +20,9 @@
         </activity>
         <activity android:name=".activity.SecondActivity"/>
         <activity android:name=".activity.ThirdActivity"/>
-        <activity android:name=".activity.FourActivity"/>
-        <activity android:name=".activity.FiveActivity"/>
+        <activity android:name=".activity.FourthActivity"/>
+        <activity android:name=".activity.FifthActivity"/>
+        <activity android:name=".activity.SixthActivity"/>
     </application>
 
 </manifest>

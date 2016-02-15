@@ -11,7 +11,7 @@ import xyz.isunxu.image_practice_0.utils.ImageUtils;
 /**
  * Created by sunxu on 16/1/28.
  */
-public class FiveActivity extends Activity {
+public class FifthActivity extends Activity {
 
     private ImageView yuantu,dipian,laozhaopian,fudiao;
 

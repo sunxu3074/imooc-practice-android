@@ -73,20 +73,14 @@ public class ImageUtils {
 
     /**
      * 灰色效果
-     * @param bm
-     * @return
      */
     public static Bitmap generateGrayImage(Bitmap bm) {
         Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
 
-        float[] matrixs = new float[] {
-                0.33f, 0.59f, 0.11f, 0, 0,
-                0.33f, 0.59f, 0.11f, 0, 0,
-                0.33f, 0.59f, 0.11f, 0, 0,
-                0, 0, 0, 1, 0
-        };
+        float[] matrixs = new float[] { 0.33f, 0.59f, 0.11f, 0, 0, 0.33f, 0.59f, 0.11f, 0, 0, 0.33f, 0.59f, 0.11f, 0, 0,
+                0, 0, 0, 1, 0 };
 
         ColorMatrix colorMatrix = new ColorMatrix();
         colorMatrix.set(matrixs);
@@ -100,20 +94,13 @@ public class ImageUtils {
 
     /**
      * 图像反转
-     * @param bm
-     * @return
      */
     public static Bitmap revertImage(Bitmap bm) {
         Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
 
-        float[] matrixs = new float[] {
-                -1, 0,0,1,1,
-                0,-1,0,1,1,
-                0,0,-1,1,1,
-                0,0,0,1,0
-        };
+        float[] matrixs = new float[] { -1, 0, 0, 1, 1, 0, -1, 0, 1, 1, 0, 0, -1, 1, 1, 0, 0, 0, 1, 0 };
 
         ColorMatrix colorMatrix = new ColorMatrix();
         colorMatrix.set(matrixs);
@@ -127,20 +114,14 @@ public class ImageUtils {
 
     /**
      * 怀旧效果
-     * @param bm
-     * @return
      */
     public static Bitmap memoriesImage(Bitmap bm) {
         Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
 
-        float[] matrixs = new float[] {
-                0.393f,0.769f,0.189f,0,0,
-                0.349f,0.686f,0.168f,0,0,
-                0.272f,0.534f,0.134f,0,0,
-                0,0,0,1,0
-        };
+        float[] matrixs = new float[] { 0.393f, 0.769f, 0.189f, 0, 0, 0.349f, 0.686f, 0.168f, 0, 0, 0.272f, 0.534f,
+                0.134f, 0, 0, 0, 0, 0, 1, 0 };
 
         ColorMatrix colorMatrix = new ColorMatrix();
         colorMatrix.set(matrixs);
@@ -154,20 +135,14 @@ public class ImageUtils {
 
     /**
      * 去色效果
-     * @param bm
-     * @return
      */
     public static Bitmap desaturateImage(Bitmap bm) {
         Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
 
-        float[] matrixs = new float[] {
-                1.5f,1.5f,1.5f,0,-1,
-                1.5f,1.5f,1.5f,0,-1,
-                1.5f,1.5f,1.5f,0,-1,
-                0 ,0 ,0,1,0
-        };
+        float[] matrixs = new float[] { 1.5f, 1.5f, 1.5f, 0, -1, 1.5f, 1.5f, 1.5f, 0, -1, 1.5f, 1.5f, 1.5f, 0, -1, 0, 0,
+                0, 1, 0 };
 
         ColorMatrix colorMatrix = new ColorMatrix();
         colorMatrix.set(matrixs);
@@ -181,20 +156,14 @@ public class ImageUtils {
 
     /**
      * 高饱和度效果
-     * @param bm
-     * @return
      */
     public static Bitmap highSaturationImage(Bitmap bm) {
         Bitmap bitmap = Bitmap.createBitmap(bm.getWidth(), bm.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint();
 
-        float[] matrixs = new float[] {
-               1.438f,-0.122f,-0.016f,0,-0.03f,
-               -0.062f,1.378f,-0.016f,0,0.05f,
-                -0.062f,-0.122f,1.438f,0,-0.02f,
-                0,0,0,1,0
-        };
+        float[] matrixs = new float[] { 1.438f, -0.122f, -0.016f, 0, -0.03f, -0.062f, 1.378f, -0.016f, 0, 0.05f,
+                -0.062f, -0.122f, 1.438f, 0, -0.02f, 0, 0, 0, 1, 0 };
 
         ColorMatrix colorMatrix = new ColorMatrix();
         colorMatrix.set(matrixs);
@@ -206,30 +175,33 @@ public class ImageUtils {
     }
 
 
+    /**
+     * 底片效果
+     */
     public static Bitmap backsheetImage(Bitmap bm) {
 
         int width = bm.getWidth();
         int height = bm.getHeight();
-        int color ;
-        int r,g,b,a;
+        int color;
+        int r, g, b, a;
 
-        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
         int[] oldPx = new int[width * height];
         int[] newPx = new int[width * height];
 
         bm.getPixels(oldPx, 0, width, 0, 0, width, height);
 
-        for (int i=0;i<oldPx.length;i++) {
+        for (int i = 0; i < oldPx.length; i++) {
             color = oldPx[i];
             r = Color.red(color);
             g = Color.green(color);
             b = Color.blue(color);
             a = Color.alpha(color);
 
-            r= 255- r;
-            g= 255- g;
-            b= 255- b;
+            r = 255 - r;
+            g = 255 - g;
+            b = 255 - b;
 
             if (r > 255) {
                 r = 255;
@@ -241,7 +213,7 @@ public class ImageUtils {
             if (g > 255) {
                 g = 255;
             }
-            else if (g< 0) {
+            else if (g < 0) {
                 g = 0;
             }
 
@@ -259,30 +231,34 @@ public class ImageUtils {
         return bitmap;
     }
 
- public static Bitmap olderImage(Bitmap bm) {
+
+    /**
+     * 老照片效果
+     */
+    public static Bitmap olderImage(Bitmap bm) {
 
         int width = bm.getWidth();
         int height = bm.getHeight();
-        int color ;
-        int r,g,b,a;
+        int color;
+        int r, g, b, a;
 
-        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
         int[] oldPx = new int[width * height];
         int[] newPx = new int[width * height];
 
         bm.getPixels(oldPx, 0, width, 0, 0, width, height);
 
-        for (int i=0;i<oldPx.length;i++) {
+        for (int i = 0; i < oldPx.length; i++) {
             color = oldPx[i];
             r = Color.red(color);
             g = Color.green(color);
             b = Color.blue(color);
             a = Color.alpha(color);
 
-            r= (int)(0.393*r+0.769*g+0.189*b);
-            g= (int)(0.349*r+0.686*g+0.168*b);
-            b= (int)(0.272*r+0.534*g+0.131*b);
+            r = (int) (0.393 * r + 0.769 * g + 0.189 * b);
+            g = (int) (0.349 * r + 0.686 * g + 0.168 * b);
+            b = (int) (0.272 * r + 0.534 * g + 0.131 * b);
 
             if (r > 255) {
                 r = 255;
@@ -294,7 +270,7 @@ public class ImageUtils {
             if (g > 255) {
                 g = 255;
             }
-            else if (g< 0) {
+            else if (g < 0) {
                 g = 0;
             }
 
@@ -312,22 +288,26 @@ public class ImageUtils {
         return bitmap;
     }
 
- public static Bitmap reliefImage(Bitmap bm) {
+
+    /**
+     * 浮雕效果
+     */
+    public static Bitmap reliefImage(Bitmap bm) {
 
         int width = bm.getWidth();
         int height = bm.getHeight();
-        int color ;
-        int r,g,b,a;
+        int color;
+        int r, g, b, a;
 
-        Bitmap bitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 
         int[] oldPx = new int[width * height];
         int[] newPx = new int[width * height];
 
         bm.getPixels(oldPx, 0, width, 0, 0, width, height);
 
-        for (int i=1;i<oldPx.length;i++) {
-            color = oldPx[i-1];
+        for (int i = 1; i < oldPx.length; i++) {
+            color = oldPx[i - 1];
             r = Color.red(color);
             g = Color.green(color);
             b = Color.blue(color);
@@ -338,9 +318,9 @@ public class ImageUtils {
             int g1 = Color.green(nextColor);
             int b1 = Color.blue(nextColor);
 
-            r= r1-r+127;
-            g= g1-g+127;
-            b= b1-b+127;
+            r = r1 - r + 127;
+            g = g1 - g + 127;
+            b = b1 - b + 127;
 
             if (r > 255) {
                 r = 255;
@@ -352,7 +332,7 @@ public class ImageUtils {
             if (g > 255) {
                 g = 255;
             }
-            else if (g< 0) {
+            else if (g < 0) {
                 g = 0;
             }
 
@@ -371,5 +351,259 @@ public class ImageUtils {
     }
 
 
+    public static Bitmap getGauss1Bitmap(Bitmap bm) {
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+        int[] oldPxs = new int[width * height];
+        int[] newPxs = new int[width * height];
+
+        bm.getPixels(oldPxs, 0, width, 0, 0, width, height);
+
+        for (int i = 0; i < oldPxs.length; i++) {
+            // 判断是不是边界元素
+            if (!(i < width || (i >= oldPxs.length - width || i % width == 0 || (i + 1) % width == 0))) {
+
+                int r1 = Color.red(oldPxs[i - width - 1]);
+                int g1 = Color.green(oldPxs[i - width - 1]);
+                int b1 = Color.blue(oldPxs[i - width - 1]);
+                //int a1 = Color.blue(oldPxs[i - width - 1]);
+
+                int r2 = Color.red(oldPxs[i - width]);
+                int g2 = Color.green(oldPxs[i - width]);
+                int b2 = Color.blue(oldPxs[i - width]);
+                //int a2 = Color.blue(oldPxs[i - width ]);
+
+                int r3 = Color.red(oldPxs[i - width + 1]);
+                int g3 = Color.green(oldPxs[i - width + 1]);
+                int b3 = Color.blue(oldPxs[i - width + 1]);
+                //int a3 = Color.blue(oldPxs[i - width + 1]);
+
+                int r4 = Color.red(oldPxs[i - 1]);
+                int g4 = Color.green(oldPxs[i - 1]);
+                int b4 = Color.blue(oldPxs[i - 1]);
+                //int a4 = Color.blue(oldPxs[i - 1]);
+
+                int r5 = Color.red(oldPxs[i]);
+                int g5 = Color.green(oldPxs[i]);
+                int b5 = Color.blue(oldPxs[i]);
+                //int a5 = Color.blue(oldPxs[i ]);
+
+                int r6 = Color.red(oldPxs[i + 1]);
+                int g6 = Color.green(oldPxs[i + 1]);
+                int b6 = Color.blue(oldPxs[i + 1]);
+                //int a6 = Color.blue(oldPxs[i +1]);
+
+                int r7 = Color.red(oldPxs[i + width - 1]);
+                int g7 = Color.green(oldPxs[i + width - 1]);
+                int b7 = Color.blue(oldPxs[i + width - 1]);
+                //int a7 = Color.blue(oldPxs[i + width -1]);
+
+                int r8 = Color.red(oldPxs[i + width]);
+                int g8 = Color.green(oldPxs[i + width]);
+                int b8 = Color.blue(oldPxs[i + width]);
+                //int a8 = Color.blue(oldPxs[i + width]);
+
+                int r9 = Color.red(oldPxs[i + width + 1]);
+                int g9 = Color.green(oldPxs[i + width + 1]);
+                int b9 = Color.blue(oldPxs[i + width + 1]);
+                //int a9 = Color.blue(oldPxs[i + width + 1]);
+
+                //int r = (int) ((0.0947416 * r1 + 0.118318 * r2 + 0.0947416 * r3 + 0.118318 * r4 + 0.147761 * r5 +
+                //        0.118318 * r6 +
+                //        0.947416 * r7 + 0.118318 * r8 + 0.0947416 * r9) / 1);
+                //int g = (int) ((0.0947416 * g1 + 0.118318 * g2 + 0.0947416 * g3 + 0.118318 * g4 + 0.147761 * g5 +
+                //        0.118318 * g6 +
+                //        0.947416 * g7 + 0.118318 * g8 + 0.0947416 * g9) / 1);
+                //int b = (int) ((0.0947416 * b1 + 0.118318 * b2 + 0.0947416 * b3 + 0.118318 * b4 + 0.147761 * b5 +
+                //        0.118318 * b6 +
+                //        0.947416 * b7 + 0.118318 * b8 + 0.0947416 * b9) / 1);
+
+                int r = (int) (
+                        (0.058549833 * r1 + 0.09653235 * r2 + 0.058549833 * r3 + 0.09653235 * r4 + 0.15915494 * r5 +
+                                0.09653235 * r6 +
+                                0.058549833 * r7 + 0.09653235 * r8 + 0.058549833 * r9) / 1);
+                int g = (int) (
+                        (0.058549833 * g1 + 0.09653235 * g2 + 0.058549833 * g3 + 0.09653235 * g4 + 0.15915494 * g5 +
+                                0.09653235 * g6 +
+                                0.058549833 * g7 + 0.09653235 * g8 + 0.058549833 * g9) / 1);
+                int b = (int) (
+                        (0.058549833 * b1 + 0.09653235 * b2 + 0.058549833 * b3 + 0.09653235 * b4 + 0.15915494 * b5 +
+                                0.09653235 * b6 +
+                                0.058549833 * b7 + 0.09653235 * b8 + 0.058549833 * b9) / 1);
+
+                // 0.058549833   0.09653235     0.058549833
+
+                //0.09653235     0.15915494     0.09653235
+
+                //0.058549833   0.09653235     0.058549833
+
+                if (r > 255) {
+                    r = 255;
+                }
+                else if (r < 0) {
+                    r = 0;
+                }
+                if (g > 255) {
+                    g = 255;
+                }
+                else if (g < 0) {
+                    g = 0;
+                }
+                if (b > 255) {
+                    b = 255;
+                }
+                else if (b < 0) {
+                    b = 0;
+                }
+
+                //int a = (a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9)/9;
+
+                //newPxs[i] = Color.argb(Color.alpha(oldPxs[i]), r, g, b);
+                //newPxs[i] = Color.argb(a, r, g, b);*/
+                //newPxs[i] = Color.argb(a,Color.red(oldPxs[i]),Color.green(oldPxs[i]),Color.blue(oldPxs[i]));
+
+                //newPxs[i] = (int) (0.0947416*oldPxs[i-width-1]+0.118318*oldPxs[i-width]+0.0947416*oldPxs[i-width+1]+
+                //                        0.118318*oldPxs[i-1]+0.147761*oldPxs[i]+0.118318*oldPxs[i+1]+
+                //                        0.947416*oldPxs[i+width-1]+0.118318*oldPxs[i+width]+0
+                // .0947416*oldPxs[i+width+1]);
+
+                newPxs[i] = (int) (0.0061165756 * oldPxs[i - width - 1] + 0.0062401383 * oldPxs[i - width] +
+                        0.0061165756 * oldPxs[i - width + 1] +
+                        0.0062401383 * oldPxs[i - 1] + 0.0063661975 * oldPxs[i] + 0.0062401383 * oldPxs[i + 1] +
+                        0.0061165756 * oldPxs[i + width - 1] + 0.0062401383 * oldPxs[i + width] +
+                        0.0061165756 * oldPxs[i + width + 1]);
+            }
+           /* else {
+                newPxs[i] = (oldPxs[i-width-1]+oldPxs[i-width]+oldPxs[i-width+1]+
+                        oldPxs[i-1]+oldPxs[i]+oldPxs[i+1]+
+                        oldPxs[i+width-1]+oldPxs[i+width]+oldPxs[i+width+1])/9;
+            }*/
+        }
+
+        for (int i = 0; i < oldPxs.length; i++) {
+            // 判断是不是边界元素
+            if (i < width) {
+                newPxs[i] = newPxs[i + width];
+            }
+            //else
+            if (i >= oldPxs.length - width) {
+                newPxs[i] = newPxs[i - width];
+            }
+            //else
+            if (i % width == 0) {
+                newPxs[i] = newPxs[i + 1];
+            }
+            //else
+            if ((i + 1) % width == 0) {
+                newPxs[i] = newPxs[i - 1];
+            }
+        }
+        bitmap.setPixels(newPxs, 0, width, 0, 0, width, height);
+        return bitmap;
+    }
+
+
+    public static Bitmap getGauss2Bitmap(Bitmap bm) {
+        int width = bm.getWidth();
+        int height = bm.getHeight();
+
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+
+        int[] oldPxs = new int[width * height];
+        int[] newPxs = new int[width * height];
+
+        bm.getPixels(oldPxs, 0, width, 0, 0, width, height);
+
+        for (int i = (2 * width + 2); i < (oldPxs.length - 2 * width - 2); i++) {
+            // 判断是不是边界元素
+            if (!(i % width == 0 || (i + 1) % width == 0 || (i + 2) % width == 0 || (i - 1) % width == 0)) {
+                int a = oldPxs[i - 2 * width - 2];
+                int b = oldPxs[i - 2 * width - 1];
+                int c = oldPxs[i - 2 * width];
+                int d = oldPxs[i - 2 * width + 1];
+                int e = oldPxs[i - 2 * width + 2];
+
+                int f = oldPxs[i - 1 * width - 2];
+                int g = oldPxs[i - 1 * width - 1];
+                int h = oldPxs[i - 1 * width];
+                int i1 = oldPxs[i - 1 * width + 1];
+                int j = oldPxs[i - 1 * width + 2];
+
+                int k = oldPxs[i - 2];
+                int l = oldPxs[i - 1];
+                int m = oldPxs[i];
+                int n = oldPxs[i + 1];
+                int o = oldPxs[i + 2];
+
+                int p = oldPxs[i + 1 * width - 2];
+                int q = oldPxs[i + 1 * width - 1];
+                int r = oldPxs[i + 1 * width];
+                int s = oldPxs[i + 1 * width + 1];
+                int t = oldPxs[i + 1 * width + 2];
+
+                int u = oldPxs[i + 2 * width - 2];
+                int v =  oldPxs[i + 2 * width - 1];
+                int w =  oldPxs[i + 2 * width];
+                int x =  oldPxs[i + 2 * width + 1];
+                int y =  oldPxs[i + 2 * width + 2];
+
+                double px =
+                0.0029150245*a+	0.013064233*b+	0.021539278*c+	0.013064233*d+	0.0029150245*e+
+                0.013064233*f+	0.058549833*g+	0.09653235*h+	0.058549833*i1+	0.013064233*j+
+                0.021539278*k+	0.09653235*l+	0.15915494*m+	0.09653235*n+	0.021539278*o+
+                0.013064233*p+	0.058549833*q+	0.09653235*r+	0.058549833*s+	0.013064233*t+
+	            0.0029150245*u+	0.013064233*v+	0.021539278*w+	0.013064233*x+  0.0029150245*y;
+
+                newPxs[i] = (int) px;
+
+            }
+            else {
+                newPxs[i] = 0;
+            }
+        }
+
+       /* for (int i = 0; i < oldPxs.length; i++) {
+            // 判断是不是边界元素
+            if (i < width) {
+                newPxs[i] = newPxs[i + width];
+            }
+            //else
+            if (i >= oldPxs.length - width) {
+                newPxs[i] = newPxs[i - width];
+            }
+            //else
+            if (i % width == 0) {
+                newPxs[i] = newPxs[i + 1];
+            }
+            //else
+            if ((i + 1) % width == 0) {
+                newPxs[i] = newPxs[i - 1];
+            }
+        }*/
+        bitmap.setPixels(newPxs, 0, width, 0, 0, width, height);
+        return bitmap;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

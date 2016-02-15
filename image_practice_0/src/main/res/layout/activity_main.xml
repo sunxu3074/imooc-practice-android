@@ -40,4 +40,9 @@
         android:layout_height="wrap_content"
         android:onClick="onPixels"
         android:text="像素点生成主流效果图"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onGauss"
+        android:text="高斯模糊"/>
 </LinearLayout>

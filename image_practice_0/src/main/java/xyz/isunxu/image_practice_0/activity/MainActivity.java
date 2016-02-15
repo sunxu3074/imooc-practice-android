@@ -39,9 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onShow(View view) {
-        startActivity(new Intent(getApplicationContext(), FourActivity.class));
+        startActivity(new Intent(getApplicationContext(), FourthActivity.class));
     }
+
+
     public void onPixels(View view) {
-        startActivity(new Intent(getApplicationContext(), FiveActivity.class));
+        startActivity(new Intent(getApplicationContext(), FifthActivity.class));
+    }
+
+
+    public void onGauss(View view) {
+        startActivity(new Intent(getApplicationContext(), SixthActivity.class));
     }
 }
